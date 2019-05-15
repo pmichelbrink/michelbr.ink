@@ -7,6 +7,11 @@ export const rootRouterConfig: Routes = [
     pathMatch: 'full' 
   },
   { 
+    path: 'home/home', 
+    redirectTo: 'home', 
+    pathMatch: 'full' 
+  },
+  { 
     path: 'home', 
     loadChildren: './views/home/home.module#HomeModule'
   },

@@ -6,8 +6,112 @@
         at.
       </p>
     </div> -->
-
     <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutWrap="wrap" fxLayoutGap="30px">
+        <div fxFlex="100">
+            <mat-card class="p-0 m-0">
+              <mat-card-content>
+                <h2><strong><a>Converting a C# Action into a Func</a></strong></h2>
+                <mat-divider class="mb-1"></mat-divider>
+                <p>
+                    5/15/2019
+                </p>
+                <p>
+                    I was refactoring some code the other day and was doing my best to keep it
+                    DRY (Don’t Repeat Yourself), when I found several methods that were very
+                    similar and could be easily passed to a helper method as a C# Action. The
+                    helper method looked something like this:
+                </p>
+                <pre class="prettyprint">
+                    internal void ExecuteWithTryCatch(Action action)
+                    &#123;
+                        try
+                        &#123;
+                            DoSomething();
+                            action();
+                            DoSomethingElse();  		  
+                        &#125;
+                        catch (Exception ex)
+                        &#123;
+                            LogError(ex); 
+                            QueueForRetry();
+                            &#125;
+                        finally
+                        &#123;
+                            DoSomeCleanup();
+                            &#125;
+                        &#125;
+                    &#125;
+                </pre>
+                <p>
+                    As I continued looking for code to clean up, I found another method that
+                    was very similar to the above code, but it was calling a Boolean function
+                    and needed to make another call if it returned false.
+                </p>
+                <p>
+                    This means that I would need ExecuteWithTryCatch() to accept a
+                    Func&lt;bool&gt; instead of an action. Since I was keeping it DRY, I didn’t
+                    want a second nearly-identical ExecuteWithTryCatch(). I needed a way to
+                    convert the Action into a Func&lt;bool&gt;, but was not having much luck on
+                    StackOverflow.com. After some experimenting I came up with this:
+                </p>
+                <pre class="prettyprint">
+                    internal void ExecuteWithTryCatch(Action action)
+                    &#123;
+                        Func&lt;bool&gt; func = new Func&lt;bool&gt;(() =&gt;
+                        &#123;
+                            action();
+                            return true;
+                        &#125;);
+            
+                        ExecuteWithTryCatch(func);
+                    &#125;
+            
+                    internal void ExecuteWithTryCatch(Func&lt;bool&gt; func)
+                    &#123;
+                        try
+                        &#123;
+                            DoSomething();
+            
+                            if (!func())
+                                HandleFalse();
+            
+                            DoSomethingElse();  		  
+                        &#125;
+                        catch (Exception ex)
+                        &#123;
+                            LogError(ex); 
+                            QueueForRetry();
+                        &#125;
+                        finally
+                        &#123;
+                            DoSomeCleanup();
+                        &#125;
+                    &#125;            
+                </pre>
+                <p>
+                    Now, the one area of code that needed to check the can implement the
+                    handler like this:
+                </p>
+                <pre class="prettyprint">
+                    base.ExecuteWithTryCatch(() =&gt;
+                    &#123;
+                        return TryBuisnessLogic();
+                    &#125;);      
+                </pre>
+                <p>
+                    The other areas of refactored code can just call:
+                </p>
+                <pre class="prettyprint">
+                    base.ExecuteWithTryCatch(() =&gt;
+                    &#123;
+                        DoBuisnessLogic();
+                    &#125;);      
+                </pre>     
+              <button mat-icon-button><mat-icon class="text-muted">link</mat-icon></button>
+              <button mat-icon-button><mat-icon class="text-muted">share</mat-icon></button>
+              </mat-card-content>         
+            </mat-card>
+          </div>
       <div fxFlex="100">
         <mat-card class="p-0 m-0">
           <mat-card-content>
@@ -139,3 +243,4 @@
     </div>
   </div>
 </section>
+<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
