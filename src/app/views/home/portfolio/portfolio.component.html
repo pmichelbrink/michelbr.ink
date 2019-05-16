@@ -20,24 +20,26 @@
               It is incredibly simple (and possibly dangerous) to create and update
               Lambda functions from the CLI. The first thing you need to do is install
               the Amazon.Lambda.Tools:
-          </p>
-          <p>
-              dotnet tool install -g Amazon.Lambda.Tools
-          </p>
-          <p>
-              Once that is done, make sure the command prompt is running in the same
-              directory as your C# code and run this command:
-          </p>
-          <p>
-              dotnet lambda deploy-function [Function Name] –-function-role [IAM Role]
-          </p>
-          <p>
-              That’s it, once the above command completes you will have a new Lambda in
-              AWS. Running the command a second time will upload a new version. Be
-              careful, this could be very dangerous in a production environment.
-          </p>
-          <button mat-icon-button><mat-icon class="text-muted">link</mat-icon></button>
-          <button mat-icon-button><mat-icon class="text-muted">share</mat-icon></button>
+            </p>
+            <p>
+                dotnet tool install -g Amazon.Lambda.Tools
+            </p>
+            <p>
+                Once that is done, make sure the command prompt is running in the same
+                directory as your C# code and run this command:
+            </p>
+            <p>
+                dotnet lambda deploy-function [Function Name] –-function-role [IAM Role]
+            </p>
+            <p>
+                That’s it, once the above command completes you will have a new Lambda in
+                AWS. Running the command a second time will upload a new version. Be
+                careful, this could be very dangerous in a production environment.
+            </p>
+            <mat-card-footer>
+            <button mat-icon-button><mat-icon class="text-muted">link</mat-icon></button>
+            <button mat-icon-button><mat-icon class="text-muted">share</mat-icon></button>
+          </mat-card-footer>
           </mat-card-content>         
         </mat-card>
       </div>
@@ -87,9 +89,12 @@
                 Apparently it is not needed anymore, because even without it I still get
                 back the correct version when running dotnet --version.
             </p> 
+            
+          </mat-card-content>   
+          
             <button mat-icon-button><mat-icon class="text-muted">link</mat-icon></button>
             <button mat-icon-button><mat-icon class="text-muted">share</mat-icon></button>
-          </mat-card-content>         
+            
         </mat-card>
       </div>
     </div>
