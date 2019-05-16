@@ -1,16 +1,10 @@
 <section id="blogs-section" class="portfolio home-section" [ngClass]="{'light-gray': backgroundGray}">
   <div class="container">
-    <!-- <div class="section-header">
-      <h2>Our Works</h2>
-      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat unde inventore molestias ab adipisci eius nisi placeat
-        at.
-      </p>
-    </div> -->
     <div fxLayout="row" fxLayout.lt-sm="column" fxLayoutWrap="wrap" fxLayoutGap="30px">
         <div fxFlex="100">
             <mat-card class="p-0 m-0">
               <mat-card-content>
-                <h2><strong><a>Converting a C# Action into a Func</a></strong></h2>
+                <h2><strong><a>Converting a C# Action into a Func&lt;bool&gt;</a></strong></h2>
                 <mat-divider class="mb-1"></mat-divider>
                 <p>
                     5/15/2019
@@ -34,11 +28,10 @@
                         &#123;
                             LogError(ex); 
                             QueueForRetry();
-                            &#125;
+                        &#125;
                         finally
                         &#123;
                             DoSomeCleanup();
-                            &#125;
                         &#125;
                     &#125;
                 </pre>
@@ -89,13 +82,13 @@
                     &#125;            
                 </pre>
                 <p>
-                    Now, the one area of code that needed to check the can implement the
+                    Now, the one area of code that needed to check the return value can implement the
                     handler like this:
                 </p>
                 <pre class="prettyprint">
                     base.ExecuteWithTryCatch(() =&gt;
                     &#123;
-                        return TryBuisnessLogic();
+                        return TryBusinessLogic();
                     &#125;);      
                 </pre>
                 <p>
@@ -104,7 +97,7 @@
                 <pre class="prettyprint">
                     base.ExecuteWithTryCatch(() =&gt;
                     &#123;
-                        DoBuisnessLogic();
+                        DoBusinessLogic();
                     &#125;);      
                 </pre>     
               <button mat-icon-button><mat-icon class="text-muted">link</mat-icon></button>
@@ -136,7 +129,7 @@
             <strong>dotnet lambda deploy-function [Function Name] –-function-role [IAM Role]</strong>
           </p>
           <p>
-              That’s it, once the above command completes you will have a new Lambda in
+              That’s it! Once the above command completes you will have a new Lambda in
               AWS. Running the command a second time will upload a new version. Be
               careful, this could be very dangerous in a production environment.
           </p>
@@ -169,7 +162,7 @@
                   credential.helper manager). I also tried adding the –v flag (e.g. git pull
                   –v) which is supposed to always prompt you for credentials. Well, none of
                   that worked so I did some more searching and found that it was Windows that
-                  was holding onto the old repository’s credentials. By navigating t:
+                  was holding onto the old repository’s credentials. By navigating to:
               </p>
               <p>
                   Control Panel -&gt; Credential Manager -&gt; Windows Credentials
