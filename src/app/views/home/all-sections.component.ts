@@ -6,7 +6,7 @@ import { LandingFixService } from '../../shared/services/landing-fix.service';
   template: `<app-header></app-header>
   <div style="height: 80px; width: 100%"></div>
   <app-portfolio [backgroundGray]="true"></app-portfolio>
-  <app-portfolio-carousel></app-portfolio-carousel>
+  <app-projects></app-projects>
   <app-services [backgroundGray]="true"></app-services>
   <app-services-carousel></app-services-carousel>
   <app-testimonials [backgroundGray]="true"></app-testimonials>

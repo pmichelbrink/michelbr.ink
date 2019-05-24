@@ -7,13 +7,13 @@
       </div>
     <ngu-carousel
     [inputs]="carouselOptions">
-      <ngu-item NguCarouselItem *ngFor="let p of portfolios">
+      <ngu-item NguCarouselItem *ngFor="let project of projects">
           <mat-card class="p-0">
-              <img mat-card-image [src]="p.photo">
+              <img mat-card-image [src]="project.photo">
               <mat-card-content>
-                <h5><strong><a href="">{{p.title}}</a></strong></h5>
+                <h5><strong><a  [routerLink]="['/home', project.id]" >{{project.title}}</a></strong></h5>
                 <p>
-                  {{p.text}}
+                  {{project.text}}
                 </p>
                       
               </mat-card-content>

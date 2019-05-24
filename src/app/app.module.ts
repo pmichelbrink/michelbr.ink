@@ -6,6 +6,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { SharedModule } from './shared/shared.module';
 import { rootRouterConfig } from './app.routes';
 import { AppComponent } from './app.component';
+import { ProjectService } from './shared/services/project.service'
+import { ProjectDetailsComponent } from './views/home/project-details/project-details.component';
 
 @NgModule({
   imports: [
@@ -15,8 +17,11 @@ import { AppComponent } from './app.component';
     SharedModule,
     RouterModule.forRoot(rootRouterConfig, { useHash: false })
   ],
-  declarations: [AppComponent],
-  providers: [],
+  declarations: [
+    AppComponent,
+    ProjectDetailsComponent
+  ],
+  providers: [ProjectService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

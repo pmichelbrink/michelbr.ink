@@ -1,0 +1,23 @@
+<div class="container">
+    <img [src]="project?.photo" [alt]="project?.title" class="project-image">
+    <h5><strong><a  [routerLink]="['/home', project?.id]" >{{project?.title}}</a></strong></h5>
+    <p>
+      {{project?.text}}
+    </p>
+   <!--  <mat-card class="p-0">
+        <img mat-card-image [src]="project?.photo" [alt]="project?.title" class="project-image">
+        <mat-card-content>
+          <h5><strong><a  [routerLink]="['/home', project?.id]" >{{project?.title}}</a></strong></h5>
+          <p>
+            {{project?.text}}
+          </p>
+                
+        </mat-card-content>
+        
+        <mat-card-footer>
+            <mat-divider class="mb-1"></mat-divider>         
+          <button mat-icon-button><mat-icon class="text-muted">link</mat-icon></button>
+          <button mat-icon-button><mat-icon class="text-muted">share</mat-icon></button>
+        </mat-card-footer>
+    </mat-card> -->
+</div>

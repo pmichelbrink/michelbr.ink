@@ -38,7 +38,7 @@ import { PricingsComponent } from './pricings/pricings.component';
 import { ContactComponent } from './contact/contact.component';
 import { FooterComponent } from './footer/footer.component';
 import { TestimonialsComponent } from './testimonials/testimonials.component';
-import { PortfolioCarouselComponent } from './portfolio-carousel/portfolio-carousel.component';
+import { PortfolioCarouselComponent } from './projects/projects.component';
 import { TestimonialsCarouselComponent } from './testimonials-carousel/testimonials-carousel.component';
 import { ServicesCarouselComponent } from './services-carousel/services-carousel.component';
 import { DemoComponent } from './demo/demo.component';

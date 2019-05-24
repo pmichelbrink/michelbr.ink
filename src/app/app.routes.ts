@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { ProjectDetailsComponent } from './views/home/project-details/project-details.component';
 
 export const rootRouterConfig: Routes = [
   { 
@@ -7,17 +8,16 @@ export const rootRouterConfig: Routes = [
     pathMatch: 'full' 
   },
   { 
-    path: 'home/home', 
-    redirectTo: 'home', 
-    pathMatch: 'full' 
-  },
-  { 
     path: 'home', 
     loadChildren: './views/home/home.module#HomeModule'
   },
   { 
+    path: 'home/:id', 
+    component: ProjectDetailsComponent
+  },
+  { 
     path: '**', 
-    redirectTo: 'home/one'
+    redirectTo: 'home'
   }
 ];
 
