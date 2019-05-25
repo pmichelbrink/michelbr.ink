@@ -13,7 +13,8 @@ export const rootRouterConfig: Routes = [
   },
   { 
     path: 'home/:id', 
-    component: ProjectDetailsComponent
+    component: ProjectDetailsComponent,
+    //loadChildren: './views/home/project-details/project-details.module#ProjectDetailsModule'
   },
   { 
     path: '**', 

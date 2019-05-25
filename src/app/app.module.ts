@@ -19,7 +19,7 @@ import { ProjectDetailsComponent } from './views/home/project-details/project-de
   ],
   declarations: [
     AppComponent,
-    ProjectDetailsComponent
+    ProjectDetailsComponent,
   ],
   providers: [ProjectService],
   bootstrap: [AppComponent]
