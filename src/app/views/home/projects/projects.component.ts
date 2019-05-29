@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { NguCarousel } from '@ngu/carousel';
 import { ProjectService } from '../../../shared/services/project.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-projects',
@@ -9,8 +10,8 @@ import { ProjectService } from '../../../shared/services/project.service';
 })
 export class PortfolioCarouselComponent implements OnInit {
   @Input('backgroundGray') public backgroundGray;
-  projects:any[]
-  constructor(private projectService: ProjectService){
+  projects:any
+  constructor(private projectService: ProjectService, private route:ActivatedRoute){
     
   }
   public carouselOptions: NguCarousel;
@@ -28,6 +29,6 @@ export class PortfolioCarouselComponent implements OnInit {
       touch: true,
       loop: true
     }
-    this.projects = this.projectService.getProjects()
+    this.projects = this.route.snapshot.data['projects']
   }
 }

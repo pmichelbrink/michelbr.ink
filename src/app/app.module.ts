@@ -10,6 +10,7 @@ import { ProjectService } from './shared/services/project.service'
 import { ProjectDetailsComponent } from './views/home/project-details/project-details.component';
 import { Error404Component } from './errors/404.component';
 import { ProjectRouteActivator } from './views/home/project-details/project-route-activator.service';
+import { ProjectsResolver } from './views/home/projects/projects-resolver.service';
 
 @NgModule({
   imports: [
@@ -24,7 +25,10 @@ import { ProjectRouteActivator } from './views/home/project-details/project-rout
     ProjectDetailsComponent,
     Error404Component
   ],
-  providers: [ProjectService, ProjectRouteActivator],
+  providers: [
+    ProjectService, 
+    ProjectRouteActivator,
+    ProjectsResolver],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

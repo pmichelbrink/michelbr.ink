@@ -34,10 +34,8 @@ import { Component } from '@angular/core'
 				<h1>404</h1>
 			</div>
 			<h2>Sorry, the page you are looking for was not found</h2>
-			<a [routerLink]="['/home']" class="home-btn">Go Home</a>
-			<div class="notfound-social">
-				<a href="https://www.linkedin.com/in/paul-michelbrink-515a85180/" target="_blank"><i class="fa fa-linkedin"></i></a>
-			</div>
+            <a [routerLink]="['/home']" class="home-btn">Go Home</a>
+            <a [routerLink]="['/home/contact']" class="contact-btn">Contact us</a>
 		</div>
 	</div>
 

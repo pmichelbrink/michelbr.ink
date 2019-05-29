@@ -6,6 +6,7 @@ import { HomeTwoComponent } from './home-two.component';
 import { HomeBlogComponent } from './home-blog.component';
 import { AllSectionsComponent } from './all-sections.component';
 import { DemoComponent } from './demo/demo.component';
+import { ContactComponent } from './contact/contact.component';
 
 export const HomeRoutes: Routes = [
   { path: 'one', component: HomeOneComponent },
@@ -14,5 +15,6 @@ export const HomeRoutes: Routes = [
   { path: 'demos', component: DemoComponent },
   //{ path: 'blog', component: HomeTwoComponent },
   { path: 'blog', component: HomeBlogComponent },
+  { path: 'contact', component: ContactComponent },
   { path: '', component: HomeComponent }
 ];

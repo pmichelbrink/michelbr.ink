@@ -1,9 +1,12 @@
 import {Injectable} from '@angular/core'
+import { Subject } from 'rxjs';
 
 @Injectable()
 export class ProjectService {
     getProjects() {
-        return PROJECTS
+      let subject = new Subject()
+      setTimeout(() => {subject.next(PROJECTS); subject.complete(); }, 100)
+        return subject
     }
     getProject(id:string){
       return PROJECTS.find(project => project.id === id)
