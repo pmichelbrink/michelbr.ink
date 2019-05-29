@@ -8,6 +8,8 @@ import { rootRouterConfig } from './app.routes';
 import { AppComponent } from './app.component';
 import { ProjectService } from './shared/services/project.service'
 import { ProjectDetailsComponent } from './views/home/project-details/project-details.component';
+import { Error404Component } from './errors/404.component';
+import { ProjectRouteActivator } from './views/home/project-details/project-route-activator.service';
 
 @NgModule({
   imports: [
@@ -20,8 +22,9 @@ import { ProjectDetailsComponent } from './views/home/project-details/project-de
   declarations: [
     AppComponent,
     ProjectDetailsComponent,
+    Error404Component
   ],
-  providers: [ProjectService],
+  providers: [ProjectService, ProjectRouteActivator],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,7 @@
 import { Routes } from '@angular/router';
 import { ProjectDetailsComponent } from './views/home/project-details/project-details.component';
+import { Error404Component } from './errors/404.component';
+import { ProjectRouteActivator } from './views/home/project-details/project-route-activator.service';
 
 export const rootRouterConfig: Routes = [
   { 
@@ -14,11 +16,15 @@ export const rootRouterConfig: Routes = [
   { 
     path: 'home/:id', 
     component: ProjectDetailsComponent,
-    //loadChildren: './views/home/project-details/project-details.module#ProjectDetailsModule'
+    canActivate: [ProjectRouteActivator]
+  },
+  { 
+    path: '404', 
+    component: Error404Component 
   },
   { 
     path: '**', 
     redirectTo: 'home'
-  }
+  },
 ];
 

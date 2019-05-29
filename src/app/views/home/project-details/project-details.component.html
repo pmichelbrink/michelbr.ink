@@ -1,7 +1,7 @@
 
 <div class="container">
     <img [src]="project?.photo" [alt]="project?.title" class="project-image">
-    <h5><strong><a  [routerLink]="['/home', project?.id]" >{{project?.title}}</a></strong></h5>
+    <h5><strong>{{project?.title}}</strong></h5>
     <p>
       {{project?.text}}
     </p>
