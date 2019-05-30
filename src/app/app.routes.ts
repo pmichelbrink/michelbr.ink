@@ -21,6 +21,10 @@ export const rootRouterConfig: Routes = [
     component: ProjectDetailsComponent,
     canActivate: [ProjectRouteActivator]
   },
+  {
+    path: 'user',
+    loadChildren: './views/user/user.module#UserModule'
+  },
   { 
     path: '404', 
     component: Error404Component 
@@ -28,6 +32,6 @@ export const rootRouterConfig: Routes = [
   { 
     path: '**', 
     redirectTo: 'home'
-  },
+  }
 ];
 
