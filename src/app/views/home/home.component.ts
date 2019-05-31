@@ -1,5 +1,8 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { LandingFixService } from '../../shared/services/landing-fix.service';
+import { Inject} from "@angular/core";
+import { DOCUMENT } from '@angular/common';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-home-ink',
@@ -11,11 +14,19 @@ import { LandingFixService } from '../../shared/services/landing-fix.service';
 })
 export class HomeComponent implements OnInit, OnDestroy {
   constructor(
-    private fix: LandingFixService
+    private fix: LandingFixService,
+    private router: Router
   ) { }
 
   ngOnInit() {
     this.fix.addFix();
+    
+    this.router.events.subscribe((evt) => {
+      if (!(evt instanceof NavigationEnd)) {
+          return;
+      }
+      window.scrollTo(0, 0)
+    });
   }
   ngOnDestroy() {
     this.fix.removeFix();

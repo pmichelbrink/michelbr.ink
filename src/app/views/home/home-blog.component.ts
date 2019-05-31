@@ -6,7 +6,6 @@ import { LandingFixService } from '../../shared/services/landing-fix.service';
   template: `<app-header></app-header>
   <app-blog-list></app-blog-list>
   <app-blogs></app-blogs>
-  <app-projects></app-projects>
   <app-contact [backgroundGray]="true"></app-contact>
   <app-footer></app-footer>`
 })

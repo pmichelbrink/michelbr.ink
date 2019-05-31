@@ -32,6 +32,9 @@ export class HeaderComponent implements OnInit {
     this.menuOpened = !this.menuOpened
   }
 
+  blogClick() {
+    window.scrollTo(0, 0)
+  }
   buyEgret() {
     this.window.open('http://michelbr.ink');
   }

@@ -7,8 +7,8 @@
       <button mat-icon-button id="menu-toggle" (click)="toggleMenu()"><mat-icon>menu</mat-icon></button>
     </div>
     <div fxFlex class="top-menu">
-      <button mat-button id="dashboard-topbtn" class="hometop-btn" [routerLink]="'/home/blog'" routerLinkActive="active"><strong>Blog</strong></button>
-      <button mat-button id="dashboard-topbtn" class="hometop-btn" scrollTo="portfolio-section"><strong>Projects</strong></button>
+      <button mat-button id="dashboard-topbtn" class="hometop-btn" [routerLink]="'/home'" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"><strong>Projects</strong></button>
+      <button mat-button id="dashboard-topbtn" class="hometop-btn" (click)="blogClick()" [routerLink]="'/home/blog'" routerLinkActive="active"><strong>Blog</strong></button>
       <!-- <button mat-button id="dashboard-topbtn" class="hometop-btn" scrollTo="service-section"><strong>Services</strong></button>
       <button mat-button id="dashboard-topbtn" class="hometop-btn" scrollTo="testimonials-section"><strong>Testimonials</strong></button>
       <button mat-button id="dashboard-topbtn" class="hometop-btn" scrollTo="pricings-section"><strong>Pricings</strong></button> -->
