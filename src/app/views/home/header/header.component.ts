@@ -32,7 +32,7 @@ export class HeaderComponent implements OnInit {
     this.menuOpened = !this.menuOpened
   }
 
-  blogClick() {
+  scrollToTop() {
     window.scrollTo(0, 0)
   }
   buyEgret() {
